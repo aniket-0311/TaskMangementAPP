@@ -1,0 +1,67 @@
+<div class="centered-content">
+    <div class="task-manager-container">
+        <div class="sidebar has-background-white">
+            <h1 class="title has-text-primary">
+                Lists
+            </h1>
+            <div class="list-menu">
+                <a class="list-menu-item" *ngFor="let ele of listArr" [routerLink]="['/list',ele._id]"
+                    routerLinkActive="is-active">
+                    <p>{{ ele.list_name }}</p>
+                </a>
+            </div>
+
+            <div class="button is-primary has-text-white" routerLink="/newlist">
+                + New List
+            </div>
+        </div>
+        <div class="task-list-container has-background-light">
+            <div class="header-content">
+                <h1 class="title has-text-primary">
+                    Tasks
+                </h1>
+
+                <div class="dropdown is-right" [ngClass]="showGearDropdown ? 'is-active':''">
+                    <div class="dropdown-trigger">
+                        <button (click)="onGearIconClick()" class="button has-background-light" aria-haspopup="true"
+                            aria-controls="dropdown-menu">
+                            <img src="../../../assets/icons/gearIcon.svg" style="position: absolute;width: 15px;">
+                        </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                        <div class="dropdown-content">
+                            <a [routerLink]="['/edit-list',selectedListId]" class="dropdown-item"> Edit </a>
+                            <a (click)="onDeleteList()" class="dropdown-item"> Delete </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Task Elements -->
+            <div *ngIf="tasks && tasks.length > 0; else noTasksOrList">
+                <div class="task" *ngFor="let task of tasks" 
+                    [ngClass]="{'is-completed':task.completed}">
+                    <p (click)="onTaskClick(task)">{{ task.task_name }}</p>
+                    <div class="task-icons">
+
+                            <img [routerLink]="['/list',selectedListId,'editTask',task._id]" class="edit-icon mr-3" src="../../../assets/icons/editIcon.svg">
+
+                        <img (click)="onDeleteTask(task._id)"
+                            src="../../../assets/icons/deleteIcon.svg">
+                    </div>
+                </div>
+
+            </div>
+
+            <ng-template #noTasksOrList>
+                <p style="margin-top: 10px;">{{ isListSelected() ? 'No tasks created!' : 'No list selected!' }}</p>
+            </ng-template>
+
+            <button [disabled]="!isListSelected()" class="circle-add-button button is-primary"
+                [class.disabled]="!isListSelected()" routerLink="./newtask">
+                <img src="../../../assets/icons/icons8-plus.svg">
+            </button>
+
+        </div>
+    </div>
+</div>

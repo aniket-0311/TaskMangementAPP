@@ -1,0 +1,36 @@
+
+.login-box{
+    padding: 35px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 5px 2px 31px rgb(6 6 6 / 37%);
+}
+
+.input{
+    background: #e3dddd;
+    border: none;
+    box-shadow: 0 0 0 2px #c4c1c1;
+    color: black;
+}
+
+.title{
+    text-align: center;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+}
+
+.custom-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.redirect-text{
+    color: #1fac8a;
+    font-weight: bold;
+
+    &:hover{
+        text-decoration: underline;
+    }
+}
