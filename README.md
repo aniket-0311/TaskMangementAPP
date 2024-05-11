@@ -1,27 +1,45 @@
-# TaskMangementAPP
+# Task Management App Documentation
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.7.
+This Task Management application is built using the MEAN (MongoDB, Express.js, Angular, Node.js) stack. It provides features for user authentication, creating and managing tasks within lists, and authorization control.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+1. **User Authentication**: Users can sign up and log in securely to access the application.
+2. **Authorization**: Implemented authentication and authorization mechanisms to control access to resources.
+3. **Task Management**: Users can create, edit, and delete tasks within lists.
+4. **List Management**: Users can create and manage lists to organize their tasks efficiently.
+5. **Token-Based Authentication**: Implemented token-based authentication with refresh tokens for secure user sessions.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Starting the Backend Server
 
-## Build
+To start the backend server, follow these steps:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Navigate to the root directory of your backend project where `server.js` is located.
+2. Install the required dependencies using npm:
+3. Start the server using nodemon:
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The backend server will start running on `http://localhost:8000`.
 
-## Running end-to-end tests
+## Starting the Angular Frontend
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+To start the Angular frontend, follow these steps:
 
-## Further help
+1. Navigate to the root directory of your Angular project.
+2. Install the required dependencies using npm:
+3. Start the Angular development server:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+or
+
+`ng serve`
+
+The Angular development server will start running on `http://localhost:4200`. Open this URL in your web browser to access the Task Management application.
+
+## Additional Information
+
+- For unit testing, you can run `ng test` for Angular frontend tests and use appropriate tools for backend testing.
+- Ensure that MongoDB is running and accessible for the backend to store data.
+
+
+![Task Management App Preview](./src/assets/Preview.png);
